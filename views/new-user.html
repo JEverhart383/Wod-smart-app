@@ -1,0 +1,43 @@
+
+
+    <div class="container">
+
+      <form class="form-signin" ng-controller="AuthController">
+        <h2 class="form-signin-heading">The journey to <strong>beastness</strong> starts with a single sign up...</h2>
+       
+        <label for="firstname" class="sr-only">First name</label>
+        <input type="text" name="user.firstname" ng-model="user.firstname" id="fistname" class="form-control" placeholder="First name" required autofocus>
+       
+        <label for="lastname" class="sr-only">Last name</label>
+        <input type="text" name="user.lastname" ng-model="user.lastname" id="lastname" class="form-control" placeholder="Last name" required autofocus>
+       
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="user.email" ng-model="user.email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+       
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="user.password" ng-model="user.password" id="inputPassword" class="form-control" placeholder="Password" required>
+       
+        <label for="inputPasswordConfirm" class="sr-only">Confirm Password</label>
+        <input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Confirm Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="register()">Sign up</button>
+      </form>
+
+      <br>
+      <div class="row">
+        <div class="col-lg-4"></div>
+        
+        <div class="col-lg-4 form-alert">
+
+        </div>
+        
+        <div class="col-lg-4"></div>
+
+
+      </div>
+
+    </div> <!-- /container -->
