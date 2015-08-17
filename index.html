@@ -18,15 +18,23 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 
-<link rel="stylesheet" type="text/css" href="styles/styles.css">
-
 <!-- Boostrap Timepicker -->
-<link rel="stylesheet" type="text/css" href="styles/bootstrap-timepicker.min.css">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-datetimepicker.min.css">
+
+<link rel="stylesheet" type="text/css" href="styles/styles.css">
 
     <!-- Latest compilied and minified JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Moment JS -->
+    <script type="text/javascript" src="libs/moment.min.js"></script>
     <!-- Latest compiled and minified Bootstrap JavaScript -->
      <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Datetimepicker-->
+    <script type="text/javascript" src="libs/bootstrap-datetimepicker.min.js"></script>
+    <!-- D3 -->
+    <script type="text/javascript" src="libs/bower_components/d3/d3.js"></script>
+    <!-- Dimple JS -->
+    <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <!-- Angluar ngRoute -->
@@ -35,12 +43,16 @@
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
     <!-- AngularFire -->
     <script type="text/javascript" src="libs/angularfire.min.js"></script>
-    <!-- Bootstrap Timepicker -->
-    <script type="text/javascript" src="libs/bootstrap-timepicker.js"></script>
-    <!-- Custom Controllers  -->
+    
+    <!-- Custom Controllers and Directives  -->
     <script type="text/javascript" src="controllers/app.js"></script>
     <script type="text/javascript" src="controllers/controllers.js"></script>
     <script type="text/javascript" src="controllers/services.js"></script>
+    <script type="text/javascript" src="controllers/directives.js"></script>
+    
+    <!-- Third Party Directives  -->
+    <script type="text/javascript" src="libs/angular-bootstrap-datetimepicker-directive.js"></script>
+    <script type="text/javascript" src="libs/bower_components/angular-dimple/dist/angular-dimple.js"></script>
 
 
   </head>
@@ -64,13 +76,13 @@
                 <li><a href="#pricing">Pricing</a></li>
           </ul> 
           <ul class="nav navbar-nav" ng-show="currentUser">
-                <li><a href="/new-wod"><span class="glyphicon glyphicon-plus"></span>&nbsp;New WOD</a></li>
-                <li><a href="/dashboard"><span class="glyphicon glyphicon-dashboard"></span>&nbsp;Dashboard</a></li>
-                <li><a href="/profile"><span class="glyphicon glyphicon-user"></span>&nbsp;Profile</a></li>
+                <li><a ng-href="/new-wod"><span class="glyphicon glyphicon-plus"></span>&nbsp;New WOD</a></li>
+                <li><a ng-href="/dashboard"><span class="glyphicon glyphicon-dashboard"></span>&nbsp;Dashboard</a></li>
+                <li><a ng-href="/profile"><span class="glyphicon glyphicon-user"></span>&nbsp;Profile</a></li>
           </ul>       
           
           <div class="navbar-right" ng-show="currentUser">
-            <p class="navbar-text">Logged in as {{currentUser.firstname}}&nbsp;{{currentUser.lastname}}</p>
+            <p class="navbar-text">{{currentUser.firstname}}&nbsp;{{currentUser.lastname}}&nbsp;<span ng-show="numberOfWods" class="badge">{{numberOfWods}}</span></p>
             <button class="btn btn-danger navbar-btn" ng-click="logout()"><span class="glyphicon glyphicon-off"></span> &nbsp;Log out</button>
           </div>
 
@@ -90,20 +102,6 @@
    <div ng-view>
     <!-- Templates Rendered Here -->
    </div> 
-
-
-<script type="text/javascript">
-
-    $('#wodTime').timepicker({
-      template: 'modal', 
-      appendWidgetTo: 'body', 
-      minuteStep: 1, 
-      showSeconds: true, 
-      showMeridian: false, 
-      secondStep: 1, 
-      defaultTime: false, 
-      showInputs: true
-  });
-</script>
+   
   </body>
 </html>

@@ -1,0 +1,101 @@
+<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+				<div class="col-md-8 col-sm-12">
+					
+					<h2><span class="glyphicon glyphicon-pencil"></span>&nbsp;Edit Profile</h2>
+					<form id="form" name="form">
+						<br>
+						<h3><span class="label label-default">General Info</span></h3>
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon">First Name</span>
+							  <input type="text" class="form-control" placeholder="{{currentUser.firstname}}" id="form-place" name="currentUser.firstname" ng-model="currentUser.firstname">
+						</div>
+						<br>
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon">Last Name</span>
+							  <input type="text" class="form-control" placeholder="{{currentUser.lastname}}" id="form-place" name="currentUser.lastname" ng-model="currentUser.lastname">
+						</div>
+						<br>
+						<h3><span class="label label-default">Age</span></h3>
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon">Age</span>
+							  <input type="text" class="form-control" placeholder="{{userRecord.age}}" id="form-place" name="userRecord.age" ng-model="userRecord.age">
+						</div>
+
+						<br>
+						<h3><span class="label label-default">Height and Weight</span></h3>
+						<h5>Choose your system of measurement</h5>
+
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-default active">
+						    <input type="radio" name="measure" id="standard" value="standard" ng-model="userRecord.measureUnit"  autocomplete="off"> Standard
+						  </label>
+						  <label class="btn btn-default">
+						    <input type="radio" name="measure" id="metric" value="metric"  ng-model="userRecord.mesaureUnit"> Metric
+						  </label>
+						</div>
+						<br>
+						<br>
+						<div>
+
+							<div class="input-group input-group-md">
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-scale"></span> Weight in LBS</span>
+							  <input type="text" class="form-control" placeholder="{{userRecord.weight}}" id="form-place" name="userRecord.weight" ng-model="userRecord.weight">
+							</div>
+							<br>
+							<div class="input-group input-group-md">
+								  <span class="input-group-addon">Feet</span>
+								  <input type="text" class="form-control" placeholder="{{userRecord.feet}}" id="form-place" name="userRecord.feet" ng-model="userRecord.feet">
+							</div>
+							<div class="input-group input-group-md">
+								  <span class="input-group-addon">Inches</span>
+								  <input type="text" class="form-control" placeholder="{{userRecord.inches}}" id="form-place" name="userRecord.inches" ng-model="userRecord.inches">
+							</div>
+
+						</div>
+
+						<!-- <div ng-show="userRecord.measureUnit == 'metric' ">
+
+							<div class="input-group input-group-md">
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-scale"> Weight in LBS</span></span>
+							  <input type="text" class="form-control" placeholder="{{profile.weight}}" id="form-place" name="profile.weight" ng-model="profile.weight">
+							</div>
+							<br>
+							<div class="input-group input-group-md">
+								  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"> Height in CM</span></span>
+								  <input type="text" class="form-control" placeholder="{{profile.cm}}" id="form-place" name="profile.cm" ng-model="profile.cm">
+							</div>
+
+						</div> -->
+
+						<h3><span class="label label-default">Sex</span></h3>
+
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-default active">
+						    <input type="radio" name="userRecord.sex" id="male" value="male" ng-model="userRecord.sex"> Male
+						  </label>
+						  <label class="btn btn-default">
+						    <input type="radio" name="userRecord.sex" id="female" value="female"  ng-model="userRecord.sex"> Female
+						  </label>
+						</div>
+						<br>
+						<h3><span class="label label-default">Affiliate</span></h3>
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon">Affiliate</span>
+							  <input type="text" class="form-control" placeholder="{{userRecord.affiliate}}" id="form-place" name="userRecord.affiliate" ng-model="userRecord.affiliate">
+						</div>
+
+						<br>
+						
+						<button class="btn btn-primary" id="btn-submit" ng-click="updateProfile()"> <span class="glyphicon glyphicon-floppy-disk"></span> Update Profile</button>
+						<button class="btn btn-danger" id="btn-submit" ng-click="cancelProfileUpdate()"> <span class="glyphicon glyphicon-floppy-remove"></span> Cancel</button>
+					
+					</form>
+					
+
+
+				</div><!--End col-md-8 div-->
+				<div class="col-md-2"></div>	
+		</div> <!--END row-->
+	</div><!--END container-->

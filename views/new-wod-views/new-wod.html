@@ -1,0 +1,75 @@
+<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+				<div class="col-md-8 col-sm-12">
+					<h2><span class="glyphicon glyphicon-plus"></span>&nbsp;New Wod</h2>
+					<!--Start New WOD Form-->
+					<form id="form" name="form" ng-controller="NewWod">
+						<div class="input-group input-group-md">
+					  		<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span>&nbsp;Search WODs</span>
+					  		<input type="text" class="form-control" placeholder="WOD Name" id="form-title" name="wodSearch" ng-model="wodSearch">
+						</div>
+					</form>
+					<h3>Select WOD Type</h3>
+
+					<!-- Begin New Wod Types Row -->
+					<br>
+					<br>
+					<br>
+
+					<div class="row">
+
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<a ng-href="/new-wod/new-amrap">
+							<img src="assets/AMRAP.png" class="img img-responsive center-block">
+							<h4 class="center-block">AMRAP</h4>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<a ng-href="/new-wod/new-fortime">
+								<img src="assets/fortime.png" class="img img-responsive center-block">
+								<h4>For Time</h4>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<a ng-href="/new-wod/new-forreps">
+							<img src="assets/forreps.png" class="img img-responsive center-block">
+							<h4 class="center-block">For Reps</h4>
+							</a>
+						</div>
+					</div>
+					<br> 
+					<br>
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<a ng-href="/new-wod/new-mono">
+							<img src="assets/running.png" class="img img-responsive center-block">
+							<h4 class="center-block">Run/Row/Swim</h4>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<a ng-href="/new-wod/new-strength">
+							<img src="assets/strength.png" class="img img-responsive center-block">
+							<h4 class="center-block">Strength</h4>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4"></div>
+					</div>
+
+					<div>
+						<div class="panel panel-default" ng-repeat="(key, wod) in wods | limitTo: 25 | filter: wodSearch">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">{{wod.name}}</h3>
+						  </div>
+						  <div class="panel-body">
+						  	<p>{{wod | json}}</p>
+						  	<a ng-click='viewWodDetails(wod.$id)' class="glyphicon glyphicon-chevron-right">More</a>
+						  </div>
+						</div>
+					</div>
+				
+				</div><!--End col-md-8 div-->
+			<div class="col-md-2"></div>	
+		</div> <!--END row-->
+	</div><!--END container-->
+

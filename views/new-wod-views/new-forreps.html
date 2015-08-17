@@ -1,0 +1,54 @@
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+				<div class="col-md-8 col-sm-12">
+					<h2><span class="glyphicon glyphicon-plus"></span>&nbsp;New Wod</h2>
+					<!--Start New WOD Form-->
+					<!--Start New WOD Form-->
+					<form id="form" name="form" ng-controller="NewWod">
+						<div class="input-group input-group-md">
+					  		<span class="input-group-addon">WOD Name</span>
+					  		<input type="text" class="form-control" placeholder="WOD Name" id="form-title" name="wod.wodName" ng-model="wod.wodName">
+						</div>
+						<br>
+				
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"> Date   </span></span>
+							  <input datetimepicker datetimepicker-options="{format: 'M/D/YYYY'}" type="text" class="form-control" placeholder="Click to open date picker" id="form-place" name="wod.date" ng-model="wod.date">
+						</div>
+						<br>
+
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-time"> Time </span></span>
+							  <input datetimepicker datetimepicker-options="{format: 'HH:mm:ss', 
+				useCurrent: false}" type="text" class="form-control" placeholder="Click to choose score type" id="wodTime" name="wod.time" ng-model="wod.time">
+						</div>
+						<br>
+
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-tasks"> Reps </span></span>
+							  <input  type="text" class="form-control" placeholder="Click to enter total reps" id="wodReps" name="wod.reps" ng-model="wod.reps">
+						</div>
+						
+				
+							<h3><span class="glyphicon glyphicon-pencil"></span> WOD Description</h3>
+							
+							<div class="input-group input-group-md">
+								  <!--<span class="input-group-addon glyphicon glyphicon-pencil"> WOD Description </span>-->
+								  <textarea name="wod.desc" ng-model="wod.desc" type="text" class="form-control" placeholder="Ex: 21-15-9 Thrusters @95, Pullups" cols="100%"></textarea>
+							</div>
+						<br>
+						<br>
+						<button class="btn btn-primary" id="btn-submit" ng-click="createNewWod()"> <span class="glyphicon glyphicon-plus"></span> Add WOD!</button>
+					</form>
+						
+						<div class="wod-desc" ng-show="wod.scoreType == 'amrap' || wod.scoreType == 'forTime' || wod.scoreType == 'forReps'">
+
+
+
+				</div><!--End col-md-8 div-->
+				<div class="col-md-2"></div>	
+		</div> <!--END row-->
+	</div><!--END container-->
+

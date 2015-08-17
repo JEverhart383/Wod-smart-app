@@ -1,0 +1,67 @@
+<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+				<div class="col-md-8 col-sm-12">
+					<h2><span class="glyphicon glyphicon-plus"></span>&nbsp;New Strength</h2>
+					<!--Start New WOD Form-->
+					<!--Start New WOD Form-->
+					<form id="form" name="form" ng-controller="NewWod">
+						<br>
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"> Date   </span></span>
+							  <input datetimepicker datetimepicker-options="{format: 'M/D/YYYY'}" type="text" class="form-control" placeholder="Click to open date picker" id="form-place" name="wod.date" ng-model="wod.date">
+						</div>
+						<br>
+
+						<br>
+							<div class="input-group">
+						      <div class="input-group-btn">
+						        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Movement <span class="caret"></span></button>
+						        
+						        <div class="dropdown-menu movement-menu">
+						        	<ul class="list-group">
+									  <li class="list-group-item" ng-repeat="move in movements">{{move.move}}</li>
+									</ul>
+						     
+						        </div>
+
+						      </div><!-- /btn-group -->
+						       <input  type="text" class="form-control" placeholder="Start typing to select a movement" name ="wodMovement" id="wodMovement" name="wod.movement" ng-model="wod.movement">
+						    </div><!-- /input-group -->
+						<br>
+
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-stats"> Reps </span></span>
+							  <input  type="text" class="form-control" placeholder="Click to enter add reps" id="wodReps" name="wod.reps" ng-model="wod.reps">
+						</div>
+						<br>
+						<div class="input-group input-group-md">
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-scale"> Weight</span></span>
+							  <input  type="text" class="form-control" placeholder="Click to enter total distance" id="wodReps" name="wod.weight" ng-model="wod.weight">
+						</div>
+						<br>
+						<h4><span class="label label-default">Weight Units</span></h4>
+
+
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-default active">
+						    <input type="radio" name="options" id="pounds" value="pounds" ng-model="wod.weightUnit"  autocomplete="off" checked> Pounds
+						  </label>
+						  <label class="btn btn-default">
+						    <input type="radio" name="options" id="kilograms" value="kilograms"  ng-model="wod.weightUnit"  autocomplete="off"> Kilograms
+						  </label>
+						</div>
+						<br>
+
+						<br>
+						<button class="btn btn-primary" id="btn-submit" ng-click="createNewWod()"> <span class="glyphicon glyphicon-plus"></span> Add WOD!</button>
+					</form>
+						
+						<div class="wod-desc" ng-show="wod.scoreType == 'amrap' || wod.scoreType == 'forTime' || wod.scoreType == 'forReps'">
+
+
+
+				</div><!--End col-md-8 div-->
+				<div class="col-md-2"></div>	
+		</div> <!--END row-->
+	</div><!--END container-->
